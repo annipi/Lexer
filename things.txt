@@ -1,0 +1,15 @@
+comentarios: //
+
+identificadores:
+/ dfsd878_afas
+X fdf,'0jk
+
+cadenas:
+'fsdfsdf' 
+"dsfdsg"
+'fjshf65,(()'??
+"kfgfs:,loiohd"
+
+Booleanos(Logico):
+verdadero/1/v
+falso/0/f
