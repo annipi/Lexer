@@ -66,8 +66,9 @@ col = 1
 for li in lst:
     l = li.lower()
     row += 1
-    lc = 0
-    while l[lc:lc+1] <> '\n' and lc < len(l):
+    if l[0] == ' ':
+        lc = 0
+        while l[lc:lc+1] <> '\n' and lc < len(l):
             #print '#'+l[lc:lc+1] #Para ver cada caracter que se esta analizando
             if l[lc] == ' ':
                 col += 1
@@ -88,3 +89,10 @@ for li in lst:
                         #print ('encontre un valor no alfa numerico en la fila:%s, columna:%s y era: .%s.') % (row, col,l[lni])
                         break
             lc += 1
+    else:
+        l_tmp = (l.strip()).split(' ')
+        for lt in l_tmp:
+            if lt in tokens:
+                print '<'+tokens[lt]+','+str(row)+','+str(row)+'>'
+            else:
+                print '<'+'id'+','+lt+','+str(row)+','+str(row)+'>'
