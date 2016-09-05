@@ -54,21 +54,37 @@ tokens = {'algoritmo':'algoritmo',
         'y':'token_y',
         ',':'token_coma',
         '^':'token_pot'}
-
+# \\ -> Son comentarios en PSeInt
+alpha_numeric = ['0','1','2','3','4','5','6','7','8','9','_',
+                'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+operators = ['~','=','<','>','+','-','/','*','%',';','','(',')','[',']','|','&',',','^']
 lst = sys.stdin.readlines()
 
 print lst
 row = 0
-col = 0
+col = 1
 for li in lst:
-    l = (li.strip()).lower()
-    row+=1
-    if ' ' in l:
-        l_tmp = l.split(' ')
-        for lt in l_tmp:
-            if lt in tokens:
-                print '<'+tokens[lt]+','+str(row)+','+'>'
-            else:
-                print '<'+'id'+','+lt+','+str(row)+','+'>'
-    elif l in tokens:
-        print '<'+tokens[l]+','+str(row)+','+'>'
+    l = li.lower()
+    row += 1
+    lc = 0
+    while l[lc:lc+1] <> '\n' and lc < len(l):
+            #print '#'+l[lc:lc+1] #Para ver cada caracter que se esta analizando
+            if l[lc] == ' ':
+                col += 1
+            elif l[lc] in alpha_numeric:
+                col += 1
+                new_l = l[lc:len(l)]
+                for lni in xrange(len(new_l)):
+                    if new_l[lni] in alpha_numeric:
+                        pass
+                    elif new_l[lni] == ' ' or new_l[lni:lni+1] == '\n':
+                        if l[lc:lc+lni] in tokens:
+                            print '<'+tokens[l[lc:lc+lni]]+','+str(row)+','+str(row)+'>'
+                        else:
+                            print '<'+'id'+','+l[lc:lc+lni]+','+str(row)+','+str(row)+'>'
+                        lc = lc+lni
+                        break
+                    else:
+                        #print ('encontre un valor no alfa numerico en la fila:%s, columna:%s y era: .%s.') % (row, col,l[lni])
+                        break
+            lc += 1
