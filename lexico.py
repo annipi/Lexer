@@ -53,11 +53,14 @@ tokens = {'algoritmo':'algoritmo',
         '&':'token_y',
         'y':'token_y',
         ',':'token_coma',
-        '^':'token_pot'}
+        '^':'token_pot',
+        '\'':'token_cadena',
+        '\"':'token_cadena'}
 # \\ -> Son comentarios en PSeInt
 alpha_numeric = ['0','1','2','3','4','5','6','7','8','9','_',
                 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-operators = ['~','=','<','>','+','-','/','*','%',';','','(',')','[',']','|','&',',','^']
+operators = ['~','=','<','>','+','-','/','*','%',';','(',')','[',']','|','&',',','^']
+numbers = [0,1,2,3,4,5,6,7,8,9,'.']
 lst = sys.stdin.readlines()
 
 print lst
@@ -78,6 +81,22 @@ for li in lst:
                 for lni in xrange(len(new_l)):
                     if new_l[lni] in alpha_numeric:
                         pass
+                    elif new_l[lni] == '\'':
+                        l_string1 = l[lni:len(l)]
+                        print '>>string1: .%s.' % l_string1
+                        for lns1 in xrange(len(l_string1)):
+                            if l_string1[lns1] == '\'':
+                                print '<'+tokens[l_string1[lns1]]+','+l[lc:lc+lni]+','+str(row)+','+str(row)+'>'
+                                lc = lc+lni+lns1
+                                break
+                    elif new_l[lni] == '\"':
+                        l_string2 = l[lni:len(l)]
+                        print '>>string2: .%s.' % l_string2
+                        for lns2 in xrange(len(l_string2)):
+                            if l_string2[lns2] == '\"':
+                                print '<'+tokens[l_string2[lns2]]+','+l[lc:lc+lni]+','+str(row)+','+str(row)+'>'
+                                lc = lc+lni+lns2
+                                break
                     elif new_l[lni] == ' ' or new_l[lni:lni+1] == '\n':
                         if l[lc:lc+lni] in tokens:
                             print '<'+tokens[l[lc:lc+lni]]+','+str(row)+','+str(row)+'>'
