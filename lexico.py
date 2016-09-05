@@ -57,61 +57,75 @@ tokens = {'algoritmo':'algoritmo',
         '\'':'token_cadena',
         '\"':'token_cadena'}
 # \\ -> Son comentarios en PSeInt
-alpha_numeric = ['0','1','2','3','4','5','6','7','8','9','_',
-                'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+alpha = ['_','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 operators = ['~','=','<','>','+','-','/','*','%',';','(',')','[',']','|','&',',','^']
-numbers = [0,1,2,3,4,5,6,7,8,9,'.']
-lst = sys.stdin.readlines()
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','.']
 
+lst = sys.stdin.readlines()
 print lst
 row = 0
-col = 1
 for li in lst:
     l = li.lower()
+    # print '$$ La cadena de entrada es: %s' % l
     row += 1
-    if l[0] == ' ':
-        lc = 0
-        while l[lc:lc+1] <> '\n' and lc < len(l):
-            #print '#'+l[lc:lc+1] #Para ver cada caracter que se esta analizando
-            if l[lc] == ' ':
-                col += 1
-            elif l[lc] in alpha_numeric:
-                col += 1
-                new_l = l[lc:len(l)]
-                for lni in xrange(len(new_l)):
-                    if new_l[lni] in alpha_numeric:
-                        pass
-                    elif new_l[lni] == '\'':
-                        l_string1 = l[lni:len(l)]
-                        print '>>string1: .%s.' % l_string1
-                        for lns1 in xrange(len(l_string1)):
-                            if l_string1[lns1] == '\'':
-                                print '<'+tokens[l_string1[lns1]]+','+l[lc:lc+lni]+','+str(row)+','+str(row)+'>'
-                                lc = lc+lni+lns1
-                                break
-                    elif new_l[lni] == '\"':
-                        l_string2 = l[lni:len(l)]
-                        print '>>string2: .%s.' % l_string2
-                        for lns2 in xrange(len(l_string2)):
-                            if l_string2[lns2] == '\"':
-                                print '<'+tokens[l_string2[lns2]]+','+l[lc:lc+lni]+','+str(row)+','+str(row)+'>'
-                                lc = lc+lni+lns2
-                                break
-                    elif new_l[lni] == ' ' or new_l[lni:lni+1] == '\n':
-                        if l[lc:lc+lni] in tokens:
-                            print '<'+tokens[l[lc:lc+lni]]+','+str(row)+','+str(row)+'>'
-                        else:
-                            print '<'+'id'+','+l[lc:lc+lni]+','+str(row)+','+str(row)+'>'
-                        lc = lc+lni
-                        break
+    lc = 0
+    while l[lc:lc+1] <> '\n' and lc < len(l):
+        #print '#'+l[lc:lc+1] #Para ver cada caracter que se esta analizando l[lc:lc+2]
+        if l[lc] == ' ':
+            pass
+        elif l[lc:lc+1] == ('\\'+'\\'):
+            break
+        elif l[lc] == '\'':
+            l_string1 = l[lc+1:len(l)]
+            st1 = ''
+            for lns1 in l_string1:
+                if lns1 == '\'':
+                    print '<'+tokens[lns1]+','+st1+','+str(row)+','+str(lc+1)+'>'
+                    lc += len(st1)+1
+                    break
+                st1 += lns1
+        elif l[lc] == '\"':
+            l_string2 = l[lc+1:len(l)]
+            st2 = ''
+            for lns2 in l_string2:
+                if lns2 == '\"':
+                    print '<'+tokens[lns2]+','+st2+','+str(row)+','+str(lc+1)+'>'
+                    lc += len(st2)+1
+                    break
+                st2 += lns2
+        elif l[lc] in alpha:
+            new_l = l[lc:len(l)]
+            stra = ''
+            for lni in xrange(len(new_l)):
+                if new_l[lni] in alpha:
+                    stra += new_l[lni]
+                elif new_l[lni] == ' ' or new_l[lni:lni+1] == '\n' or lni == len(l)-2:
+                    # print '---stra: '+stra
+                    if stra in tokens:
+                        print '<'+tokens[l[lc:lc+lni]]+','+str(row)+','+str(lc+1)+'>'
                     else:
-                        #print ('encontre un valor no alfa numerico en la fila:%s, columna:%s y era: .%s.') % (row, col,l[lni])
-                        break
-            lc += 1
-    else:
-        l_tmp = (l.strip()).split(' ')
-        for lt in l_tmp:
-            if lt in tokens:
-                print '<'+tokens[lt]+','+str(row)+','+str(row)+'>'
-            else:
-                print '<'+'id'+','+lt+','+str(row)+','+str(row)+'>'
+                        print '<'+'id'+','+l[lc:lc+lni]+','+str(row)+','+str(lc+1)+'>'
+                    lc += len(stra)
+                    break
+                else:
+                    print ('>>> Error lexico (linea: %s, posicion: %s)') % (row, lc)
+                    break
+        elif l[lc] in numbers:
+            new_n = l[lc:len(l)]
+            strn = ''
+            for lnin in xrange(len(new_n)):
+                if new_n[lnin] in alpha:
+                    strn += new_n[lnin]
+                elif new_n[lnin] == '.':
+                    pass
+                elif new_n[lnin] == ' ' or new_n[lnin:lnin+1] == '\n':
+                    if strn in tokens:
+                        print '<'+tokens[l[lc:lc+lnin]]+','+str(row)+','+str(lc+1)+'>'
+                    else:
+                        print '<'+'id'+','+l[lc:lc+lnin]+','+str(row)+','+str(lc+1)+'>'
+                    lc += len(strn)
+                    break
+                else:
+                    print ('>>> Error lexico (linea: %s, posicion: %s)') % (row, lc)
+                    break
+        lc += 1

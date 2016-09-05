@@ -1,2 +1,5 @@
-algoritmo mi_algoritmo
-    Definir a como Entero
+Algoritmo sin_titulo
+    "esto es una cadena"
+    'esto tambien'
+    \\something 64563449yfdhs.-ñ
+    finproceso
