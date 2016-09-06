@@ -57,75 +57,110 @@ tokens = {'algoritmo':'algoritmo',
         '\'':'token_cadena',
         '\"':'token_cadena'}
 # \\ -> Son comentarios en PSeInt
-alpha = ['_','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-operators = ['~','=','<','>','+','-','/','*','%',';','(',')','[',']','|','&',',','^']
-numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','.']
+alpha_list = ['_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+operators_list = ['~', '=', '<-', '<>', '<', '>', '<=', '>=', '+', '-', '/', '*', '%', ';', ':', '(', ')', '[', ']', '|', '&', ',', '^']
+
+numbers_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 lst = sys.stdin.readlines()
 print lst
+
 row = 0
-for li in lst:
-    l = li.lower()
+li = 0
+while li < len(lst):
+    l = lst[li].lower()
     # print '$$ La cadena de entrada es: %s' % l
     row += 1
     lc = 0
-    while l[lc:lc+1] <> '\n' and lc < len(l):
-        #print '#'+l[lc:lc+1] #Para ver cada caracter que se esta analizando l[lc:lc+2]
+    while l[lc:lc+1] != '\n' and lc < len(l):
+        # print '#'+l[lc:lc+1] #Para ver cada caracter que se esta analizando l[lc:lc+2]
         if l[lc] == ' ':
             pass
-        elif l[lc:lc+1] == ('\\'+'\\'):
+        elif l[lc:lc+2] == '//':
+            lc += 1
             break
+        # Cadenas que contengan con '
         elif l[lc] == '\'':
-            l_string1 = l[lc+1:len(l)]
-            st1 = ''
-            for lns1 in l_string1:
-                if lns1 == '\'':
-                    print '<'+tokens[lns1]+','+st1+','+str(row)+','+str(lc+1)+'>'
-                    lc += len(st1)+1
+            strings1 = l[lc + 1:len(l)]
+            string1 = ''
+            for strchar1 in strings1:
+                if strchar1 == '\'':
+                    print '<'+tokens[strchar1] + ',' + string1 + ',' + str(row) + ',' + str(lc + 1) + '>'
+                    lc += len(string1)
                     break
-                st1 += lns1
+                string1 += strchar1
+        # Cadenas que contengan con "
         elif l[lc] == '\"':
-            l_string2 = l[lc+1:len(l)]
-            st2 = ''
-            for lns2 in l_string2:
-                if lns2 == '\"':
-                    print '<'+tokens[lns2]+','+st2+','+str(row)+','+str(lc+1)+'>'
-                    lc += len(st2)+1
+            strings2 = l[lc + 1:len(l)]
+            string2 = ''
+            for strchar2 in strings2:
+                if strchar2 == '\"':
+                    print '<'+tokens[strchar2] + ',' + string2 + ',' + str(row) + ',' + str(lc + 1) + '>'
+                    lc += len(string2)
                     break
-                st2 += lns2
-        elif l[lc] in alpha:
-            new_l = l[lc:len(l)]
-            stra = ''
-            for lni in xrange(len(new_l)):
-                if new_l[lni] in alpha:
-                    stra += new_l[lni]
-                elif new_l[lni] == ' ' or new_l[lni:lni+1] == '\n' or lni == len(l)-2:
-                    # print '---stra: '+stra
-                    if stra in tokens:
-                        print '<'+tokens[l[lc:lc+lni]]+','+str(row)+','+str(lc+1)+'>'
+                string2 += strchar2
+        # Cadenas que contengan con [a-z] o '_'
+        elif l[lc] in alpha_list:
+            chars = l[lc:len(l)]
+            char = ''
+            for char_i in xrange(len(chars)):
+                if chars[char_i] in alpha_list:
+                    char += chars[char_i]
+                elif chars[char_i] == ' ' or chars[char_i:char_i+2] == '\n' or chars[char_i] in operators_list:
+                    if char in tokens:
+                        print '<'+tokens[l[lc:lc + char_i]] + ',' + str(row) + ',' + str(lc + 1) + '>'
                     else:
-                        print '<'+'id'+','+l[lc:lc+lni]+','+str(row)+','+str(lc+1)+'>'
-                    lc += len(stra)
+                        print '<'+'id'+','+ l[lc:lc + char_i] + ',' + str(row) + ',' + str(lc + 1) + '>'
+                    lc += len(char)
                     break
                 else:
                     print ('>>> Error lexico (linea: %s, posicion: %s)') % (row, lc)
                     break
-        elif l[lc] in numbers:
-            new_n = l[lc:len(l)]
-            strn = ''
-            for lnin in xrange(len(new_n)):
-                if new_n[lnin] in alpha:
-                    strn += new_n[lnin]
-                elif new_n[lnin] == '.':
-                    pass
-                elif new_n[lnin] == ' ' or new_n[lnin:lnin+1] == '\n':
-                    if strn in tokens:
-                        print '<'+tokens[l[lc:lc+lnin]]+','+str(row)+','+str(lc+1)+'>'
+        # Cadenas que contengan con [0-9]
+        elif l[lc] in numbers_list:
+            flag_point = False
+            digits = l[lc:len(l)]
+            real_or_int = ''
+            for digit in xrange(len(digits)):
+                if digits[digit] in numbers_list:
+                    real_or_int += digits[digit]
+                elif digits[digit] == '.' and not flag_point:
+                    real_or_int += digits[digit]
+                    flag_point = True
+                elif digits[digit] == '.' and flag_point:
+                    lc = len(l)
+                    print ('>>> Error lexico (linea: %s, posicion: %s)') % (row, digit+1)
+                    break
+                elif digits[digit] == ' ' or digits[digit:digit+2] == '\n' or digits[digit] in operators_list:
+                    if '.' in real_or_int:
+                        print '<'+'token_real'+',' + real_or_int + ',' + str(row) + ',' + str(lc + 1) + '>'
                     else:
-                        print '<'+'id'+','+l[lc:lc+lnin]+','+str(row)+','+str(lc+1)+'>'
-                    lc += len(strn)
+                        print '<'+'token_entero'+',' + real_or_int + ',' + str(row) + ',' + str(lc + 1) + '>'
+                    lc += len(real_or_int)
                     break
                 else:
+                    lc = len(l)
                     print ('>>> Error lexico (linea: %s, posicion: %s)') % (row, lc)
                     break
+        # Cadenas que contengan con operadores
+        elif l[lc] in operators_list:
+            if l[lc] == '<':
+                if l[lc+1] == '-':
+                    print '<'+tokens[l[lc:lc+2]] + ',' + l[lc:lc+2] + ',' + str(row) + ',' + str(lc + 1) + '>'
+                    lc += len(l[lc])
+                elif l[lc+1] == '>':
+                    print '<'+tokens[l[lc:lc+2]] + ',' + l[lc:lc+2] + ',' + str(row) + ',' + str(lc + 1) + '>'
+                    lc += len(l[lc])
+                elif l[lc+1] == '=':
+                    print '<'+tokens[l[lc:lc+2]] + ',' + l[lc:lc+2] + ',' + str(row) + ',' + str(lc + 1) + '>'
+                    lc += len(l[lc])
+            if l[lc] == '>':
+                if l[lc+1] == '=':
+                    print '<'+tokens[l[lc:lc+2]] + ',' + l[lc:lc+2] + ',' + str(row) + ',' + str(lc + 1) + '>'
+                    lc += len(l[lc])
+            print '<'+tokens[l[lc]] + ',' + l[lc] + ',' + str(row) + ',' + str(lc + 1) + '>'
+            lc += len(l[lc])
+
         lc += 1
+    li += 1
