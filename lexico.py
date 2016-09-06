@@ -112,11 +112,10 @@ while li < len(lst):
                 string2 += strchar2
         # Cadenas que contengan con [a-z] o '_'
         elif l.lower()[lc] in alpha_list:
-            l = l.lower()
             chars = l[lc:len(l)]
             char = ''
             for char_i in xrange(len(chars)):
-                if chars[char_i] in alpha_list:
+                if chars[char_i].lower() in alpha_list:
                     char += chars[char_i]
                 elif chars[char_i] == ' ' or chars[char_i:char_i+2] == '\n':
                     if char in tokens:
@@ -177,20 +176,20 @@ while li < len(lst):
             if l[lc] == '<':
                 if l[lc+1] == '-':
                     print '<'+tokens[l[lc:lc+2]] + ',' + str(row) + ',' + str(lc + 1) + '>'
-                    lc += len(l[lc])+1
+                    lc += len(l[lc])
                 elif l[lc+1] == '>':
                     print '<'+tokens[l[lc:lc+2]] + ',' + str(row) + ',' + str(lc + 1) + '>'
-                    lc += len(l[lc])+1
+                    lc += len(l[lc])
                 elif l[lc+1] == '=':
                     print '<'+tokens[l[lc:lc+2]] + ',' + str(row) + ',' + str(lc + 1) + '>'
-                    lc += len(l[lc])+1
+                    lc += len(l[lc])
                 else:
                     print '<'+tokens[l[lc]] + ',' + str(row) + ',' + str(lc+1) + '>'
                     lc += len(l[lc])-1
             elif l[lc] == '>':
                 if l[lc+1] == '=':
                     print '<'+tokens[l[lc:lc+2]] + ',' + str(row) + ',' + str(lc + 1) + '>'
-                    lc += len(l[lc])+1
+                    lc += len(l[lc])
                 else:
                     print '<'+tokens[l[lc]] + ',' + str(row) + ',' + str(lc+1) + '>'
                     lc += len(l[lc])-1

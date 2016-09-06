@@ -1,16 +1,10 @@
+Proceso mi_proceso
+    Definir n Como Entero;
+    n <-;100;
 
+    Mientras n>=0 Hacer
+        Escribir n;
+        n <- "uobBUODA2342432";
+    FinMientras
 
-
-
-
-
-
-
-
-
-
-
-
-
-    Escribir N,' ',i,' ',c,' ',r,' ',b;
 FinProceso
