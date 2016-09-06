@@ -1,0 +1,20 @@
+<escribir,15,5>
+<id,n,15,14>
+<token_coma,15,15>
+<token_cadena, ,15,16>
+<token_coma,15,19>
+<id,i,15,20>
+<token_coma,15,21>
+<token_cadena, ,15,22>
+<token_coma,15,25>
+<id,c,15,26>
+<token_coma,15,27>
+<token_cadena, ,15,28>
+<token_coma,15,31>
+<id,r,15,32>
+<token_coma,15,33>
+<token_cadena, ,15,34>
+<token_coma,15,37>
+<id,b,15,38>
+<token_pyc,15,39>
+<finproceso,16,1>
