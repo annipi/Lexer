@@ -1,10 +1,2 @@
-Proceso mi_proceso
-    Definir n Como Entero;
-    n <-;100;
-
-    Mientras n>=0 Hacer
-        Escribir n;
-        n <- "uobBUODA2342432";
-    FinMientras
-
-FinProceso
+5454.5454
+ 1513. 54
