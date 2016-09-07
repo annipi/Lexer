@@ -2,52 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54873d0a-bfb2-41d5-8fa7-83969e48a25a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1A_2016_1.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1A_2016_1.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1A_2016_2.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1A_2016_2.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1A_2016_3.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1A_2016_3.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1A_2016_4.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1A_2016_4.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1B_2016_1.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1B_2016_1.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1B_2016_2.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1B_2016_2.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1B_2016_3.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1B_2016_3.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1B_2016_4.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1B_2016_4.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1C_2016_1.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1C_2016_1.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1C_2016_2.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1C_2016_2.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1C_2016_3.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1C_2016_3.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1C_2016_4.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1C_2016_4.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1D_2016_1.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1D_2016_1.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1D_2016_2.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1D_2016_2.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1D_2016_3.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1D_2016_3.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1D_2016_4.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1D_2016_4.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1D_2016_5.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1D_2016_5.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1E_2016_1.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1E_2016_1.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1E_2016_2.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1E_2016_2.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1E_2016_3.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1E_2016_3.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1E_2016_4.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestCases/L1E_2016_4.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/salida.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lexico.py" afterPath="$PROJECT_DIR$/lexico.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp.in" afterPath="$PROJECT_DIR$/tmp.in" />
     </list>
     <ignored path="Lexico.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,8 +26,8 @@
       <file leaf-file-name="lexico.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lexico.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5952381">
-              <caret line="203" column="25" selection-start-line="203" selection-start-column="25" selection-end-line="203" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.505291">
+              <caret line="196" column="55" selection-start-line="196" selection-start-column="55" selection-end-line="196" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -196,6 +151,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -230,8 +187,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -759,14 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmp.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/salida.out">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -775,10 +722,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tmp.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lexico.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5952381">
-          <caret line="203" column="25" selection-start-line="203" selection-start-column="25" selection-end-line="203" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.505291">
+          <caret line="196" column="55" selection-start-line="196" selection-start-column="55" selection-end-line="196" selection-end-column="55" />
           <folding />
         </state>
       </provider>

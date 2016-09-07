@@ -180,6 +180,7 @@ while li < len(lst):
             digits = l[lc:len(l)]
             real_or_int = ''
             for digit in xrange(len(digits)):
+                print flag_point
                 if digits[digit] in numbers_list:
                     real_or_int += digits[digit]
                 elif digits[digit] == '.' and not flag_point:
@@ -190,7 +191,8 @@ while li < len(lst):
                     lc = len(l)
                     li = len(lst)
                     break
-                elif digits[digit] not in integers and not flag_point:
+
+                elif digits[digit] not in numbers_list and not flag_point:
                     if '.' in real_or_int:
                         print '<'+'token_real'+',' + real_or_int + ',' + str(row) + ',' + str(lc + 1) + '>'
                     else:
