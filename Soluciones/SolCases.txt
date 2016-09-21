@@ -1,0 +1,2 @@
+<token_mayor,10,1>
+<token_mayor_igual,10,1>
