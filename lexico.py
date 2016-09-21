@@ -60,7 +60,22 @@ tokens = {'algoritmo':'algoritmo',
         '^':'token_pot',
         '\'':'token_cadena',
         '\"':'token_cadena',
-        'case':'case'}
+        'caso':'caso',
+        'subproceso':'subproceso',
+        'finsubproceso':'finsubproceso',
+        'sino':'sino',
+        'segun':'segun',
+        'de':'de',
+        'otro':'otro',
+        'modo':'modo',
+        'finsegun':'finsegun',
+        'repetir':'repetir',
+        'limpiar':'limpiar',
+        'pantalla':'pantalla',
+        'tecla':'tecla',
+        'hasta':'hasta',
+        'para':'para',
+        'finpara':'finpara'}
 # \\ -> Son comentarios en PSeInt
 alpha_list = ['_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
@@ -75,6 +90,7 @@ row = 0
 li = 0
 flag_open = False
 flag_double_open = False
+flag_swag = False
 while li < len(lst):
     l = lst[li]
     # print '$$ La cadena de entrada es: %s' % l
@@ -92,21 +108,25 @@ while li < len(lst):
             flag_open = True
             strings1 = l[lc + 1:len(l)]
             string1 = ''
-            count = 0
-            for strchar1 in strings1:
-                if (strchar1 == '\'' or strchar1 == '\"') and flag_open:
-                    print '<'+tokens[strchar1] + ',' + string1 + ',' + str(row) + ',' + str(lc + 1) + '>'
+    #        count = 0
+            for strchar1 in xrange(len(strings1)):
+                if (strings1[strchar1] == '\'' or strings1[strchar1] == '\"') and flag_open:
+                    print '<'+tokens[strings1[strchar1]] + ',' + string1 + ',' + str(row) + ',' + str(lc + 1) + '>'
                     lc += len(string1)+1
                     flag_open = False
                     break
-                string1 += strchar1
+                elif (strings1[strchar1:strchar1+2] == '\n') and flag_open:
+                    print ('>>> Error lexico (linea: %s, posicion: %s)') % (row, lc+1)
+                    lc = len(l)
+                    li = len(lst)
+                string1 += strings1[strchar1]
         # Cadenas que contengan con [a-z] o '_'
         elif l.lower()[lc] in alpha_list:
             l = l.lower()
             chars = l[lc:len(l)]
             char = ''
             for char_i in xrange(len(chars)):
-                if chars[char_i] in alpha_list:
+                if (chars[char_i] in alpha_list) or (chars[char_i] in numbers_list):
                     char += chars[char_i]
                 elif chars[char_i] == ' ' or chars[char_i:char_i+2] == '\n':
                     if char in tokens:
@@ -135,27 +155,30 @@ while li < len(lst):
             for digit in xrange(len(digits)):
                 if digits[digit] in numbers_list:
                     real_or_int += digits[digit]
+                    flag_swag = False
                 elif digits[digit] == '.' and not flag_point:
                     real_or_int += digits[digit]
                     flag_point = True
+                    flag_swag = True
                 elif digits[digit] == '.' and flag_point:
                     print ('>>> Error lexico (linea: %s, posicion: %s)') % (row, digit+1)
                     lc = len(l)
                     li = len(lst)
                     break
-                elif digits[digit] == ' ' or digits[digit:digit+2] == '\n':
-                    if '.' in real_or_int:
-                        print '<'+'token_real'+',' + real_or_int + ',' + str(row) + ',' + str(lc + 1) + '>'
-                    else:
-                        print '<'+'token_entero'+',' + real_or_int + ',' + str(row) + ',' + str(lc + 1) + '>'
-                    lc += len(real_or_int)
-                    break
-                elif digits[digit] in operators_list:
+                elif not flag_swag and ((digits[digit] in operators_list) or (digits[digit] == '\'') or (digits[digit] == '\"') or (digits[digit] == ' ') or (digits[digit:digit+2] == '\n')):
                     if '.' in real_or_int:
                         print '<'+'token_real'+',' + real_or_int + ',' + str(row) + ',' + str(lc + 1) + '>'
                     else:
                         print '<'+'token_entero'+',' + real_or_int + ',' + str(row) + ',' + str(lc + 1) + '>'
                     lc += len(real_or_int)-1
+                    break
+                elif flag_swag and ((digits[digit] in operators_list) or (digits[digit] == '\'') or (digits[digit] == '\"') or (digits[digit] == ' ') or (digits[digit:digit+2] == '\n')):
+                    real_or_int = real_or_int[0:len(real_or_int)-1]
+                    print '<'+'token_entero'+',' + real_or_int + ',' + str(row) + ',' + str(lc + 1) + '>'
+                    lc += len(real_or_int)-1
+                    print ('>>> Error lexico (linea: %s, posicion: %s)') % (row, lc+len(real_or_int)-1)
+                    lc = len(l)
+                    li = len(lst)
                     break
                 else:
                     print ('>>> Error lexico (linea: %s, posicion: %s)') % (row, lc+1)
