@@ -116,8 +116,8 @@ while li < len(lst):
             flag_open = True
             strings1 = l[lc + 1:len(l)]
             string1 = ''
-    #        count = 0
             for strchar1 in xrange(len(strings1)):
+                print string1
                 if (strings1[strchar1] == '\'' or strings1[strchar1] == '\"') and flag_open:
                     print '<'+tokens[strings1[strchar1]] + ',' + string1 + ',' + str(row) + ',' + str(lc + 1) + '>'
                     lc += len(string1)+1
@@ -127,6 +127,7 @@ while li < len(lst):
                     print ('>>> Error lexico (linea: %s, posicion: %s)') % (row, lc+1)
                     lc = len(l)
                     li = len(lst)
+                    break
                 string1 += strings1[strchar1]
         # Cadenas que contengan con [a-z] o '_'
         elif l.lower()[lc] in alpha_list:
