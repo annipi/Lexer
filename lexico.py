@@ -75,7 +75,15 @@ tokens = {'algoritmo':'algoritmo',
         'tecla':'tecla',
         'hasta':'hasta',
         'para':'para',
-        'finpara':'finpara'}
+        'finpara':'finpara',
+        'borrar':'borrar',
+        'con':'con',
+        'finfuncion':'finfuncion',
+        'funcion':'funcion',
+        'milisegundos':'milisegundos',
+        'paso':'paso',
+        'segundos':'segundos'}
+
 # \\ -> Son comentarios en PSeInt
 alpha_list = ['_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
