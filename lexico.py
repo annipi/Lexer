@@ -59,7 +59,8 @@ tokens = {'algoritmo':'algoritmo',
         ',':'token_coma',
         '^':'token_pot',
         '\'':'token_cadena',
-        '\"':'token_cadena'}
+        '\"':'token_cadena',
+        'case':'case'}
 # \\ -> Son comentarios en PSeInt
 alpha_list = ['_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
@@ -72,7 +73,7 @@ lst = sys.stdin.readlines()
 
 row = 0
 li = 0
-flag_simple_open = False
+flag_open = False
 flag_double_open = False
 while li < len(lst):
     l = lst[li]
@@ -87,29 +88,18 @@ while li < len(lst):
             lc += 1
             break
         # Cadenas que contengan con '
-        elif l[lc] == '\'' and not flag_simple_open:
-            flag_simple_open = True
+        elif (l[lc] == '\'' or l[lc] == '\"') and not flag_open:
+            flag_open = True
             strings1 = l[lc + 1:len(l)]
             string1 = ''
+            count = 0
             for strchar1 in strings1:
-                if strchar1 == '\'' and flag_simple_open:
+                if (strchar1 == '\'' or strchar1 == '\"') and flag_open:
                     print '<'+tokens[strchar1] + ',' + string1 + ',' + str(row) + ',' + str(lc + 1) + '>'
                     lc += len(string1)+1
-                    flag_simple_open = False
+                    flag_open = False
                     break
                 string1 += strchar1
-        # Cadenas que contengan con "
-        elif l[lc] == '\"' and not flag_double_open:
-            flag_double_open = True
-            strings2 = l[lc + 1:len(l)]
-            string2 = ''
-            for strchar2 in strings2:
-                if strchar2 == '\"' and flag_double_open:
-                    print '<'+tokens[strchar2] + ',' + string2 + ',' + str(row) + ',' + str(lc + 1) + '>'
-                    lc += len(string2)+1
-                    flag_double_open = False
-                    break
-                string2 += strchar2
         # Cadenas que contengan con [a-z] o '_'
         elif l.lower()[lc] in alpha_list:
             l = l.lower()
@@ -177,20 +167,20 @@ while li < len(lst):
             if l[lc] == '<':
                 if l[lc+1] == '-':
                     print '<'+tokens[l[lc:lc+2]] + ',' + str(row) + ',' + str(lc + 1) + '>'
-                    lc += len(l[lc])+1
+                    lc += len(l[lc])
                 elif l[lc+1] == '>':
                     print '<'+tokens[l[lc:lc+2]] + ',' + str(row) + ',' + str(lc + 1) + '>'
-                    lc += len(l[lc])+1
+                    lc += len(l[lc])
                 elif l[lc+1] == '=':
                     print '<'+tokens[l[lc:lc+2]] + ',' + str(row) + ',' + str(lc + 1) + '>'
-                    lc += len(l[lc])+1
+                    lc += len(l[lc])
                 else:
                     print '<'+tokens[l[lc]] + ',' + str(row) + ',' + str(lc+1) + '>'
                     lc += len(l[lc])-1
             elif l[lc] == '>':
                 if l[lc+1] == '=':
                     print '<'+tokens[l[lc:lc+2]] + ',' + str(row) + ',' + str(lc + 1) + '>'
-                    lc += len(l[lc])+1
+                    lc += len(l[lc])
                 else:
                     print '<'+tokens[l[lc]] + ',' + str(row) + ',' + str(lc+1) + '>'
                     lc += len(l[lc])-1
