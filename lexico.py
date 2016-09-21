@@ -115,9 +115,9 @@ while li < len(lst):
         elif (l[lc] == '\'' or l[lc] == '\"') and not flag_open:
             flag_open = True
             strings1 = l[lc + 1:len(l)]
+            # print '>>> entre a comillas.', strings1                                                                  #
             string1 = ''
             for strchar1 in xrange(len(strings1)):
-                print string1
                 if (strings1[strchar1] == '\'' or strings1[strchar1] == '\"') and flag_open:
                     print '<'+tokens[strings1[strchar1]] + ',' + string1 + ',' + str(row) + ',' + str(lc + 1) + '>'
                     lc += len(string1)+1
@@ -130,23 +130,23 @@ while li < len(lst):
                     break
                 string1 += strings1[strchar1]
         # Cadenas que contengan con [a-z] o '_'
-        elif l.lower()[lc] in alpha_list:
-            l = l.lower()
+        elif l[lc].lower() in alpha_list:
+            # print ">>> entre a alpha_list"                                                                           #
             chars = l[lc:len(l)]
             char = ''
             for char_i in xrange(len(chars)):
-                if (chars[char_i] in alpha_list) or (chars[char_i] in numbers_list):
+                if (chars[char_i].lower() in alpha_list) or (chars[char_i].lower() in numbers_list):
                     char += chars[char_i]
                 elif chars[char_i] == ' ' or chars[char_i:char_i+2] == '\n':
                     if char in tokens:
-                        print '<'+tokens[l[lc:lc + char_i]] + ',' + str(row) + ',' + str(lc + 1) + '>'
+                        print '<'+tokens[(l[lc:lc + char_i]).lower()] + ',' + str(row) + ',' + str(lc + 1) + '>'
                     else:
                         print '<'+'id'+','+ l[lc:lc + char_i] + ',' + str(row) + ',' + str(lc + 1) + '>'
                     lc += len(char)
                     break
                 elif chars[char_i] in operators_list:
                     if char in tokens:
-                        print '<'+tokens[l[lc:lc + char_i]] + ',' + str(row) + ',' + str(lc + 1) + '>'
+                        print '<'+tokens[(l[lc:lc + char_i]).lower()] + ',' + str(row) + ',' + str(lc + 1) + '>'
                     else:
                         print '<'+'id'+','+ l[lc:lc + char_i] + ',' + str(row) + ',' + str(lc + 1) + '>'
                     lc += len(char)-1
