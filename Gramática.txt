@@ -1,0 +1,19 @@
+S -> subproceso | proceso
+subproceso -> id token_asig id token_par_izq id token_par_der SUBP
+SUBP -> EXPRESION SUBP | ASIGNACION SUBP | CICLO SUBP| finsubproceso
+finsubproceso -> subproceso | proceso
+proceso -> id PROC
+PROC -> EXPRESION PROC| ASIGNACION PROC |CICLO PROC | finproceso 
+finproceso -> $
+ASIGNACION -> definir | dimension
+dimension -> id token_cor_izq token_entero token_cor_der token pyc
+definir -> id token_coma definir | id como DEF
+DEF -> entero token_pyc  | real token_pyc  | texto token_pyc  | numerico token_pyc 
+numerico -> 
+ASIGNACION -> id token_asig ASIG | id token_asig EXPRESION | id token_asig id token_par_izq token_entero token_par_izq | id token_asig id token_par_izq token_real token_par_izq | id token_asig id token_par_izq token_entero token_par_izq
+ASIG -> token_cadena token_pyc | token_entero token_pyc | token_real token_pyc | verdadero token_pyc | falso token_pyc
+EXPRESION -> GOnorrea OME OMG
+
+
+
+

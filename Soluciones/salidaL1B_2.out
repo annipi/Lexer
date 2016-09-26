@@ -1,9 +1,9 @@
-<proceso,2,1>
+<id,Proceso,2,1>
 <id,mi_proceso,2,9>
-<definir,3,5>
+<id,Definir,3,5>
 <id,a,3,13>
 <como,3,15>
-<real,3,20>
+<id,Real,3,20>
 <token_pyc,3,24>
 <id,a,4,5>
 <token_asig,4,6>
@@ -65,7 +65,7 @@
 <token_mul,7,16>
 <id,a,7,17>
 <token_pyc,7,18>
-<escribir,8,5>
+<id,Escribir,8,5>
 <id,a,8,14>
 <token_pyc,8,15>
-<finproceso,9,1>
+<id,finProceSO,9,1>

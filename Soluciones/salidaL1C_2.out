@@ -1,11 +1,11 @@
-<proceso,1,1>
+<id,Proceso,1,1>
 <id,mi_proceso,1,9>
-<definir,3,5>
+<id,Definir,3,5>
 <id,arreglo,3,13>
 <como,3,21>
 <numero,3,26>
 <token_pyc,3,32>
-<dimension,6,5>
+<id,Dimension,6,5>
 <id,arreglo,6,15>
 <token_cor_izq,6,22>
 <token_entero,100,6,23>
@@ -24,7 +24,7 @@
 <token_mul,8,28>
 <token_entero,212,8,29>
 <token_pyc,8,32>
-<escribir,9,5>
+<id,Escribir,9,5>
 <id,arreglo,9,14>
 <token_cor_izq,9,21>
 <token_entero,0,9,22>
@@ -32,4 +32,4 @@
 <token_entero,0,9,24>
 <token_cor_der,9,25>
 <token_pyc,9,26>
-<finproceso,10,1>
+<id,FinProceso,10,1>

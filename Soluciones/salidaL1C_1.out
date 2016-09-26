@@ -1,6 +1,6 @@
 <proceso,1,1>
-<id,miproceso,1,9>
-<definir,2,5>
+<id,miProceso,1,9>
+<id,Definir,2,5>
 <id,a,2,13>
 <token_coma,2,14>
 <id,b,2,15>
@@ -23,9 +23,9 @@
 <token_coma,2,32>
 <id,k,2,33>
 <como,2,35>
-<real,2,40>
+<id,Real,2,40>
 <token_pyc,2,44>
-<escribir,3,5>
+<id,Escribir,3,5>
 <id,a,3,14>
 <token_coma,3,15>
 <id,b,3,16>
@@ -56,7 +56,7 @@
 <token_mul,5,15>
 <id,c,5,16>
 <token_pyc,5,17>
-<leer,6,5>
+<id,Leer,6,5>
 <id,a,6,10>
 <token_coma,6,11>
 <id,b,6,12>

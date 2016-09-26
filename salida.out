@@ -1,9 +1,11 @@
-<token_cadena,PUTA MADRE,1,1>
-<id,Escribir,2,1>
-<id,i,2,10>
-<token_coma,2,11>
-<token_cadena, ES IMPAR,2,12>
-<token_pyc,2,23>
-<token_cadena,Adhesives,3,12>
-<token_cadena,AdiAbATic,4,8>
-<token_cadena,AdiAbATicAlly,5,7>
+<proceso,1,1>
+<id,mi_proceso,1,9>
+<definir,2,5>
+<id,a,2,13>
+<como,2,15>
+<entero,2,20>
+<token_pyc,2,26>
+<id,a,3,5>
+<token_asig,3,7>
+<token_pyc,3,10>
+<finproceso,4,1>

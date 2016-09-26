@@ -1,13 +1,13 @@
-<proceso,3,1>
-<id,adivina_numero,3,9>
-<definir,5,5>
+<id,Proceso,3,1>
+<id,Adivina_Numero,3,9>
+<id,Definir,5,5>
 <id,intentos,5,13>
 <token_coma,5,21>
 <id,num_secreto,5,22>
 <token_coma,5,33>
 <id,num_ingresado,5,34>
-<como,5,48>
-<entero,5,53>
+<id,Como,5,48>
+<id,Entero,5,53>
 <token_pyc,5,59>
 <id,intentos,6,5>
 <token_asig,6,13>
@@ -22,58 +22,58 @@
 <token_mas,7,29>
 <token_entero,1,7,30>
 <token_pyc,7,31>
-<escribir,9,5>
-<token_cadena,adivine el numero (de 1 a 100):,9,14>
+<id,Escribir,9,5>
+<token_cadena,Adivine el numero (de 1 a 100):,9,14>
 <token_pyc,9,47>
-<leer,10,5>
+<id,Leer,10,5>
 <id,num_ingresado,10,10>
 <token_pyc,10,23>
-<mientras,11,5>
+<id,Mientras,11,5>
 <id,num_secreto,11,14>
 <token_dif,11,25>
 <id,num_ingresado,11,27>
-<token_y,11,41>
+<id,Y,11,41>
 <id,intentos,11,43>
 <token_mayor,11,51>
 <token_entero,1,11,52>
-<hacer,11,54>
-<si,12,9>
+<id,Hacer,11,54>
+<id,Si,12,9>
 <id,num_secreto,12,12>
 <token_mayor,12,23>
 <id,num_ingresado,12,24>
-<entonces,12,38>
-<escribir,13,13>
-<token_cadena,muy bajo,13,22>
+<id,Entonces,12,38>
+<id,Escribir,13,13>
+<token_cadena,Muy bajo,13,22>
 <token_pyc,13,32>
-<sino,14,9>
-<escribir,15,13>
-<token_cadena,muy alto,15,22>
+<id,Sino,14,9>
+<id,Escribir,15,13>
+<token_cadena,Muy alto,15,22>
 <token_pyc,15,32>
-<finsi,16,9>
+<id,FinSi,16,9>
 <id,intentos,17,9>
 <token_asig,17,18>
 <id,intentos,17,21>
 <token_menos,17,29>
 <token_entero,1,17,30>
 <token_pyc,17,31>
-<escribir,18,9>
-<token_cadena,le quedan ,18,18>
+<id,Escribir,18,9>
+<token_cadena,Le quedan ,18,18>
 <token_coma,18,30>
 <id,intentos,18,31>
 <token_coma,18,39>
 <token_cadena, intentos:,18,40>
 <token_pyc,18,52>
-<leer,19,9>
+<id,Leer,19,9>
 <id,num_ingresado,19,14>
 <token_pyc,19,27>
-<finmientras,20,5>
-<si,22,5>
+<id,FinMientras,20,5>
+<id,Si,22,5>
 <id,num_secreto,22,8>
 <token_igual,22,19>
 <id,num_ingresado,22,20>
-<entonces,22,34>
-<escribir,23,9>
-<token_cadena,exacto! usted adivino en ,23,18>
+<id,Entonces,22,34>
+<id,Escribir,23,9>
+<token_cadena,Exacto! Usted adivino en ,23,18>
 <token_coma,23,45>
 <token_entero,11,23,46>
 <token_menos,23,48>
@@ -81,57 +81,57 @@
 <token_coma,23,57>
 <token_cadena, intentos.,23,58>
 <token_pyc,23,70>
-<sino,24,5>
-<escribir,25,9>
-<token_cadena,el numero era: ,25,18>
+<id,Sino,24,5>
+<id,Escribir,25,9>
+<token_cadena,El numero era: ,25,18>
 <token_coma,25,35>
 <id,num_secreto,25,36>
 <token_pyc,25,47>
-<finsi,26,5>
-<finproceso,28,1>
-<proceso,32,1>
-<id,promedio,32,9>
-<definir,34,5>
+<id,FinSi,26,5>
+<id,FinProceso,28,1>
+<id,Proceso,32,1>
+<id,Promedio,32,9>
+<id,Definir,34,5>
 <id,i,34,13>
 <token_coma,34,14>
-<id,n,34,15>
+<id,N,34,15>
 <como,34,17>
-<entero,34,22>
+<id,Entero,34,22>
 <token_pyc,34,28>
-<definir,35,5>
+<id,Definir,35,5>
 <id,acum,35,13>
 <token_coma,35,17>
 <id,dato,35,18>
 <token_coma,35,22>
 <id,prom,35,23>
 <como,35,28>
-<id,reales,35,33>
+<id,Reales,35,33>
 <token_pyc,35,39>
-<escribir,36,5>
-<token_cadena,ingrese la cantidad de datos:,36,14>
+<id,Escribir,36,5>
+<token_cadena,Ingrese la cantidad de datos:,36,14>
 <token_pyc,36,45>
-<leer,37,5>
+<id,Leer,37,5>
 <id,n,37,10>
 <token_pyc,37,11>
 <id,acum,39,5>
 <token_asig,39,9>
 <token_entero,0,39,11>
 <token_pyc,39,12>
-<para,41,5>
+<id,Para,41,5>
 <id,i,41,10>
 <token_asig,41,11>
 <token_entero,1,41,13>
-<hasta,41,15>
+<id,Hasta,41,15>
 <id,n,41,21>
-<hacer,41,23>
-<escribir,42,9>
-<token_cadena,ingrese el dato ,42,18>
+<id,Hacer,41,23>
+<id,Escribir,42,9>
+<token_cadena,Ingrese el dato ,42,18>
 <token_coma,42,36>
 <id,i,42,37>
 <token_coma,42,38>
 <token_cadena,:,42,39>
 <token_pyc,42,42>
-<leer,43,9>
+<id,Leer,43,9>
 <id,dato,43,14>
 <token_pyc,43,18>
 <id,acum,44,9>
@@ -140,106 +140,106 @@
 <token_mas,44,19>
 <id,dato,44,20>
 <token_pyc,44,24>
-<finpara,45,5>
+<id,FinPara,45,5>
 <id,prom,47,5>
 <token_asig,47,9>
 <id,acum,47,11>
 <token_div,47,15>
 <id,n,47,16>
 <token_pyc,47,17>
-<escribir,49,5>
-<token_cadena,el promedio es: ,49,14>
+<id,Escribir,49,5>
+<token_cadena,El promedio es: ,49,14>
 <token_coma,49,32>
 <id,prom,49,33>
 <token_pyc,49,37>
-<finproceso,51,1>
-<proceso,56,1>
-<id,suma,56,9>
-<definir,58,5>
-<id,a,58,13>
+<id,FinProceso,51,1>
+<id,Proceso,56,1>
+<id,Suma,56,9>
+<id,Definir,58,5>
+<id,A,58,13>
 <token_coma,58,14>
-<id,b,58,15>
+<id,B,58,15>
 <token_coma,58,16>
-<id,c,58,17>
+<id,C,58,17>
 <como,58,19>
-<id,reales,58,24>
+<id,Reales,58,24>
 <token_pyc,58,30>
-<escribir,65,5>
-<token_cadena,ingrese el primer numero:,65,14>
+<id,Escribir,65,5>
+<token_cadena,Ingrese el primer numero:,65,14>
 <token_pyc,65,41>
-<leer,66,5>
-<id,a,66,10>
+<id,Leer,66,5>
+<id,A,66,10>
 <token_pyc,66,11>
-<escribir,68,5>
-<token_cadena,ingrese el segundo numero:,68,14>
+<id,Escribir,68,5>
+<token_cadena,Ingrese el segundo numero:,68,14>
 <token_pyc,68,42>
-<leer,69,5>
-<id,b,69,10>
+<id,Leer,69,5>
+<id,B,69,10>
 <token_pyc,69,11>
-<id,c,75,5>
+<id,C,75,5>
 <token_asig,75,7>
-<id,a,75,10>
+<id,A,75,10>
 <token_mas,75,11>
-<id,b,75,12>
+<id,B,75,12>
 <token_pyc,75,13>
-<escribir,82,5>
-<token_cadena,el resultado es: ,82,14>
+<id,Escribir,82,5>
+<token_cadena,El resultado es: ,82,14>
 <token_coma,82,33>
-<id,c,82,34>
+<id,C,82,34>
 <token_pyc,82,35>
-<finproceso,84,1>
-<proceso,90,1>
-<id,triangulorectangulo,90,9>
-<definir,94,5>
+<id,FinProceso,84,1>
+<id,Proceso,90,1>
+<id,TrianguloRectangulo,90,9>
+<id,Definir,94,5>
 <id,l1,94,13>
 <token_coma,94,15>
 <id,l2,94,16>
 <token_coma,94,18>
 <id,l3,94,19>
-<como,94,22>
-<real,94,27>
+<id,Como,94,22>
+<id,Real,94,27>
 <token_pyc,94,31>
-<escribir,95,5>
-<token_cadena,ingrese el lado 1:,95,14>
+<id,Escribir,95,5>
+<token_cadena,Ingrese el lado 1:,95,14>
 <token_pyc,95,34>
-<leer,96,5>
+<id,Leer,96,5>
 <id,l1,96,10>
 <token_pyc,96,12>
-<escribir,97,5>
-<token_cadena,ingrese el lado 2:,97,14>
+<id,Escribir,97,5>
+<token_cadena,Ingrese el lado 2:,97,14>
 <token_pyc,97,34>
-<leer,98,5>
+<id,Leer,98,5>
 <id,l2,98,10>
 <token_pyc,98,12>
-<escribir,99,5>
-<token_cadena,ingrese el lado 3:,99,14>
+<id,Escribir,99,5>
+<token_cadena,Ingrese el lado 3:,99,14>
 <token_pyc,99,34>
-<leer,100,5>
+<id,Leer,100,5>
 <id,l3,100,10>
 <token_pyc,100,12>
-<definir,103,5>
+<id,Definir,103,5>
 <id,cat1,103,13>
 <token_coma,103,17>
 <id,cat2,103,18>
 <token_coma,103,22>
 <id,hip,103,23>
-<como,103,27>
-<real,103,32>
+<id,Como,103,27>
+<id,Real,103,32>
 <token_pyc,103,36>
-<si,104,5>
+<id,Si,104,5>
 <id,l1,104,8>
 <token_mayor,104,10>
 <id,l2,104,11>
-<entonces,104,14>
+<id,Entonces,104,14>
 <id,cat1,105,9>
 <token_asig,105,13>
 <id,l2,105,15>
 <token_pyc,105,17>
-<si,106,9>
+<id,Si,106,9>
 <id,l1,106,12>
 <token_mayor,106,14>
 <id,l3,106,15>
-<entonces,106,18>
+<id,Entonces,106,18>
 <id,hip,107,13>
 <token_asig,107,16>
 <id,l1,107,18>
@@ -248,7 +248,7 @@
 <token_asig,108,17>
 <id,l3,108,19>
 <token_pyc,108,21>
-<sino,109,9>
+<id,Sino,109,9>
 <id,hip,110,13>
 <token_asig,110,16>
 <id,l3,110,18>
@@ -257,17 +257,17 @@
 <token_asig,111,17>
 <id,l1,111,19>
 <token_pyc,111,21>
-<finsi,112,9>
-<sino,113,5>
+<id,FinSi,112,9>
+<id,Sino,113,5>
 <id,cat1,114,9>
 <token_asig,114,13>
 <id,l1,114,15>
 <token_pyc,114,17>
-<si,115,9>
+<id,Si,115,9>
 <id,l2,115,12>
 <token_mayor,115,14>
 <id,l3,115,15>
-<entonces,115,18>
+<id,Entonces,115,18>
 <id,hip,116,13>
 <token_asig,116,16>
 <id,l2,116,18>
@@ -276,7 +276,7 @@
 <token_asig,117,17>
 <id,l3,117,19>
 <token_pyc,117,21>
-<sino,118,9>
+<id,Sino,118,9>
 <id,hip,119,13>
 <token_asig,119,16>
 <id,l3,119,18>
@@ -285,9 +285,9 @@
 <token_asig,120,17>
 <id,l2,120,19>
 <token_pyc,120,21>
-<finsi,121,9>
-<finsi,122,5>
-<si,125,5>
+<id,FinSi,121,9>
+<id,FinSi,122,5>
+<id,Si,125,5>
 <id,hip,125,8>
 <token_pot,125,11>
 <token_entero,2,125,12>
@@ -299,8 +299,8 @@
 <id,cat2,125,25>
 <token_pot,125,29>
 <token_entero,2,125,30>
-<entonces,125,32>
-<definir,127,9>
+<id,Entonces,125,32>
+<id,Definir,127,9>
 <id,area,127,17>
 <como,127,22>
 <real,127,27>
@@ -315,75 +315,75 @@
 <token_div,128,26>
 <token_entero,2,128,27>
 <token_pyc,128,28>
-<escribir,129,9>
-<token_cadena,el area es: ,129,18>
+<id,Escribir,129,9>
+<token_cadena,El area es: ,129,18>
 <token_coma,129,32>
 <id,area,129,33>
 <token_pyc,129,37>
-<sino,130,5>
-<escribir,131,9>
-<token_cadena,no es un triangulo rectangulo.,131,18>
+<id,Sino,130,5>
+<id,Escribir,131,9>
+<token_cadena,No es un triangulo rectangulo.,131,18>
 <token_pyc,131,50>
-<finsi,132,5>
-<finproceso,134,1>
-<proceso,136,1>
-<id,modulo,136,9>
-<definir,137,5>
-<id,n,137,13>
+<id,FinSi,132,5>
+<id,FinProceso,134,1>
+<id,Proceso,136,1>
+<id,Modulo,136,9>
+<id,Definir,137,5>
+<id,N,137,13>
 <token_coma,137,14>
-<id,m,137,15>
-<como,137,17>
-<id,enteros,137,22>
+<id,M,137,15>
+<id,Como,137,17>
+<id,Enteros,137,22>
 <token_pyc,137,29>
-<escribir,138,5>
-<token_cadena,ingrese el numero: ,138,14>
+<id,Escribir,138,5>
+<token_cadena,Ingrese el numero: ,138,14>
 <token_pyc,138,35>
-<leer,139,5>
-<id,n,139,10>
+<id,Leer,139,5>
+<id,N,139,10>
 <token_pyc,139,11>
-<escribir,140,5>
-<token_cadena,ingrese el divisor: ,140,14>
+<id,Escribir,140,5>
+<token_cadena,Ingrese el divisor: ,140,14>
 <token_pyc,140,36>
-<leer,141,5>
-<id,m,141,10>
+<id,Leer,141,5>
+<id,M,141,10>
 <token_pyc,141,11>
-<si,142,5>
-<id,n,142,8>
-<token_mod,142,10>
-<id,m,142,14>
+<id,Si,142,5>
+<id,N,142,8>
+<id,MOD,142,10>
+<id,M,142,14>
 <token_igual,142,16>
 <token_entero,0,142,18>
-<entonces,142,20>
-<escribir,143,9>
-<id,m,143,18>
+<id,Entonces,142,20>
+<id,Escribir,143,9>
+<id,M,143,18>
 <token_coma,143,19>
 <token_cadena, es divisor exacto de ,143,20>
 <token_coma,143,44>
-<id,n,143,45>
+<id,N,143,45>
 <token_coma,143,46>
 <token_cadena,.,143,47>
 <token_pyc,143,50>
-<sino,144,5>
-<escribir,145,9>
-<token_cadena,el resto de dividir ,145,18>
+<id,Sino,144,5>
+<id,Escribir,145,9>
+<token_cadena,El resto de dividir ,145,18>
 <token_coma,145,40>
-<id,n,145,41>
+<id,N,145,41>
 <token_coma,145,42>
 <token_cadena, por ,145,43>
 <token_coma,145,50>
-<id,m,145,51>
+<id,M,145,51>
 <token_coma,145,52>
 <token_cadena, es: ,145,53>
 <token_coma,145,60>
-<id,n,145,61>
-<token_mod,145,63>
-<id,m,145,67>
+<id,N,145,61>
+<id,MOD,145,63>
+<id,M,145,67>
 <token_pyc,145,68>
-<finsi,146,5>
-<finproceso,147,1>
-<proceso,151,1>
-<id,digitos,151,9>
-<definir,153,5>
+<id,FinSi,146,5>
+<id,FinProceso,147,1>
+<id,Proceso,151,1>
+<id,Digitos,151,9>
+<id,Definir,153,5>
 <id,i,153,13>
 <token_coma,153,14>
 <id,digito,153,15>
@@ -395,13 +395,13 @@
 <id,aux,153,28>
 <token_coma,153,31>
 <id,cont,153,32>
-<como,153,37>
-<id,enteros,153,42>
+<id,Como,153,37>
+<id,Enteros,153,42>
 <token_pyc,153,49>
-<escribir,154,5>
-<token_cadena,ingrese un numero entero postivo:,154,14>
+<id,Escribir,154,5>
+<token_cadena,Ingrese un numero entero postivo:,154,14>
 <token_pyc,154,49>
-<leer,155,5>
+<id,Leer,155,5>
 <id,n,155,10>
 <token_pyc,155,11>
 <id,cont,158,5>
@@ -412,7 +412,7 @@
 <token_asig,159,9>
 <id,n,159,12>
 <token_pyc,159,13>
-<mientras,160,5>
+<id,Mientras,160,5>
 <id,aux,160,14>
 <token_mayor,160,17>
 <token_entero,0,160,18>
@@ -432,9 +432,9 @@
 <token_entero,10,162,26>
 <token_par_der,162,28>
 <token_pyc,162,29>
-<finmientras,163,5>
-<escribir,164,5>
-<token_cadena,el numero tiene ,164,14>
+<id,FinMientras,163,5>
+<id,Escribir,164,5>
+<token_cadena,El numero tiene ,164,14>
 <token_coma,164,32>
 <id,cont,164,33>
 <token_coma,164,37>
@@ -444,13 +444,13 @@
 <token_asig,167,8>
 <id,n,167,10>
 <token_pyc,167,11>
-<para,168,5>
+<id,Para,168,5>
 <id,i,168,10>
 <token_asig,168,11>
 <token_entero,1,168,13>
 <hasta,168,15>
 <id,cont,168,21>
-<hacer,168,26>
+<id,Hacer,168,26>
 <id,pot,169,9>
 <token_asig,169,13>
 <token_entero,10,169,16>
@@ -478,8 +478,8 @@
 <token_mul,171,28>
 <id,pot,171,29>
 <token_pyc,171,32>
-<escribir,172,9>
-<token_cadena,el digito ,172,18>
+<id,Escribir,172,9>
+<token_cadena,El digito ,172,18>
 <token_coma,172,30>
 <id,i,172,31>
 <token_coma,172,32>
@@ -487,5 +487,5 @@
 <token_coma,172,39>
 <id,digito,172,40>
 <token_pyc,172,46>
-<finpara,173,5>
-<finproceso,175,1>
+<id,FinPara,173,5>
+<id,FinProceso,175,1>

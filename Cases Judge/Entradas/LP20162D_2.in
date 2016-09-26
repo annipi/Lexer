@@ -1,0 +1,68 @@
+Proceso mi_proceso
+    
+    Definir a Como Entero;
+    Leer a;
+    
+    Definir c Como Entero;
+    c <- 12*3;
+    
+    segun a hacer
+        c:
+            Escribir "Treinta y seis";
+        2:
+            Escribir "Dos";
+        48/6:
+            Escribir "Ocho";
+        De Otro Modo:
+            Escribir "Opcion no valida";
+    FinSegun
+    
+FinProceso
+
+// Muestra como hacer un menu simple con las estructuras Repetir-Hasta Que y Segun
+
+Proceso sin_titulo
+    Definir OP Como Entero;
+    Repetir
+        // mostrar menu
+        Limpiar Pantalla;
+        Escribir "Menu de recomendaciones";
+        Escribir "   1. Literatura";
+        Escribir "   2. Cine";
+        Escribir "   3. Musica";
+        Escribir "   4. Videojuegos";
+        Escribir "   5. Salir";
+        // ingresar una opcion
+        Escribir "Elija una opcion (1-5): ";
+        Leer OP;
+        // procesar esa opcion
+        Segun OP Hacer
+            1:
+                Escribir "Lecturas recomendables:";
+                Escribir " + Esperandolo a Tito y otros cuentos de fubol (Eduardo Sacheri)";
+                Escribir " + El juego de Ender (Orson Scott Card)";
+                Escribir " + El sueno de los heroes (Adolfo Bioy Casares)";
+            2:
+                Escribir "Peliculas recomendables:";
+                Escribir " + Matrix (1999)";
+                Escribir " + El ultimo samuray (2003)";
+                Escribir " + Cars (2006)";
+            3:
+                Escribir "Discos recomendables:";
+                Escribir " + Despedazado por mil partes (La Renga, 1996)";
+                Escribir " + Bufalo (La Mississippi, 2008)";
+                Escribir " + Gaia (Mago de Oz, 2003)";
+            4:
+                Escribir "Videojuegos clasicos recomendables";
+                Escribir " + Dia del tentaculo (LucasArts, 1993)";
+                Escribir " + Terminal Velocity (Terminal Reality/3D Realms, 1995)";
+                Escribir " + Death Rally (Remedy/Apogee, 1996)";
+            5:
+                Escribir "Gracias, vuelva prontos";
+            De otro modo:
+			Escribir "Opcion no valida";
+        FinSegun
+        Escribir "Presione enter para continuar";
+        Esperar Tecla;
+    Hasta Que OP=5
+FinProceso
